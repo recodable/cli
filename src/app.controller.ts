@@ -1,5 +1,6 @@
 import { AppService } from './app.service';
 import { Controller, Command } from '@recodable/khala';
+import { execSync } from 'child_process';
 
 @Controller()
 export class AppController {
@@ -7,6 +8,6 @@ export class AppController {
 
   @Command()
   setup() {
-    console.log('here');
+    execSync('npm i @recodable/prettier-config');
   }
 }
