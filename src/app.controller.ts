@@ -8,5 +8,6 @@ export class AppController {
   @Command()
   setup() {
     this.appService.setupPrettier();
+    this.appService.formatProject();
   }
 }

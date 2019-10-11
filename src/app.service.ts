@@ -12,6 +12,13 @@ export class AppService {
     if (!data.prettier) {
       data.prettier = '@recodable/prettier-config';
     }
+    if (!data.scripts.format) {
+      data.scripts.format = 'prettier--write "src/**/*.ts"';
+    }
     writeFileSync(packageFilePath, JSON.stringify(data, null, 2));
+  }
+
+  formatProject() {
+    execSync('npm run format');
   }
 }
