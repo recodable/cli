@@ -13,7 +13,7 @@ export class AppService {
       data.prettier = '@recodable/prettier-config';
     }
     if (!data.scripts.format) {
-      data.scripts.format = 'prettier--write "src/**/*.ts"';
+      data.scripts.format = 'prettier --write "src/**/*.ts"';
     }
     writeFileSync(packageFilePath, JSON.stringify(data, null, 2));
   }
