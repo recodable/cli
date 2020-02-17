@@ -7,6 +7,14 @@ export class AppController {
 
   @Command()
   setup() {
+    this.setupPrettier();
+  }
+
+  @Command({
+    signature: 'prettier',
+    description: 'Setup Prettier config',
+  })
+  setupPrettier() {
     this.appService.setupPrettier();
     this.appService.formatProject();
   }
